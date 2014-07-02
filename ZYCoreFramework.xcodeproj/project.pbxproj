@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD55670A19645A780070507F /* UIView+ZYCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BD55670919645A780070507F /* UIView+ZYCore.m */; };
 		BDB677DB1964554800507F62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677DA1964554800507F62 /* main.m */; };
 		BDB677DE1964554800507F62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677DD1964554800507F62 /* AppDelegate.m */; };
 		BDB677E11964554800507F62 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677E01964554800507F62 /* ViewController.m */; };
 		BDB677E41964554800507F62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDB677E21964554800507F62 /* Main.storyboard */; };
 		BDB677E61964554800507F62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB677E51964554800507F62 /* Images.xcassets */; };
 		BDB677F21964554800507F62 /* ZYCoreFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677F11964554800507F62 /* ZYCoreFrameworkTests.m */; };
+		BDB677FE196455C900507F62 /* ZYCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677FD196455C900507F62 /* ZYCoreViewController.m */; };
+		BDB67801196455E600507F62 /* ZYCoreNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB67800196455E600507F62 /* ZYCoreNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD55670819645A780070507F /* UIView+ZYCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYCore.h"; sourceTree = "<group>"; };
+		BD55670919645A780070507F /* UIView+ZYCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYCore.m"; sourceTree = "<group>"; };
 		BDB677D51964554800507F62 /* ZYCoreFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYCoreFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB677D91964554800507F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB677DA1964554800507F62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -38,6 +43,11 @@
 		BDB677EB1964554800507F62 /* ZYCoreFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYCoreFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB677F01964554800507F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB677F11964554800507F62 /* ZYCoreFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCoreFrameworkTests.m; sourceTree = "<group>"; };
+		BDB677FC196455C900507F62 /* ZYCoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCoreViewController.h; sourceTree = "<group>"; };
+		BDB677FD196455C900507F62 /* ZYCoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCoreViewController.m; sourceTree = "<group>"; };
+		BDB677FF196455E600507F62 /* ZYCoreNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCoreNavigationController.h; sourceTree = "<group>"; };
+		BDB67800196455E600507F62 /* ZYCoreNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCoreNavigationController.m; sourceTree = "<group>"; };
+		BDB678021964560F00507F62 /* ZYCoreConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCoreConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 		BDB677CC1964554800507F62 = {
 			isa = PBXGroup;
 			children = (
+				BDB677FB1964559000507F62 /* Core */,
 				BDB677D71964554800507F62 /* ZYCoreFramework */,
 				BDB677EE1964554800507F62 /* ZYCoreFrameworkTests */,
 				BDB677D61964554800507F62 /* Products */,
@@ -114,6 +125,20 @@
 				BDB677F01964554800507F62 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDB677FB1964559000507F62 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BDB677FC196455C900507F62 /* ZYCoreViewController.h */,
+				BDB677FD196455C900507F62 /* ZYCoreViewController.m */,
+				BDB677FF196455E600507F62 /* ZYCoreNavigationController.h */,
+				BDB67800196455E600507F62 /* ZYCoreNavigationController.m */,
+				BDB678021964560F00507F62 /* ZYCoreConfig.h */,
+				BD55670819645A780070507F /* UIView+ZYCore.h */,
+				BD55670919645A780070507F /* UIView+ZYCore.m */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB677FE196455C900507F62 /* ZYCoreViewController.m in Sources */,
 				BDB677E11964554800507F62 /* ViewController.m in Sources */,
+				BD55670A19645A780070507F /* UIView+ZYCore.m in Sources */,
+				BDB67801196455E600507F62 /* ZYCoreNavigationController.m in Sources */,
 				BDB677DE1964554800507F62 /* AppDelegate.m in Sources */,
 				BDB677DB1964554800507F62 /* main.m in Sources */,
 			);
@@ -404,6 +432,7 @@
 				BDB677F71964554800507F62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BDB677F81964554800507F62 /* Build configuration list for PBXNativeTarget "ZYCoreFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +441,7 @@
 				BDB677FA1964554800507F62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
