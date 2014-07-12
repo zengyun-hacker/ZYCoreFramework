@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    kHorizontal,
+    kVertical,
+} PushDirection;
+
 @interface ZYCoreNavigationController : UINavigationController
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated withDirection: (PushDirection)direction;
+
+- (void)popViewController:(BOOL)animated withDirection:(PushDirection)direction;
 
 @end

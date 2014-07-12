@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    kleftBarItem,
+    kRightBarItem,
+} BarItemType;
+
 @interface ZYCoreViewController : UIViewController
+
+- (void)setLeftBarItemWithImage:(NSString *)imageName target:(id)target action:(SEL)selector;
+
+- (void)setLeftBarItemWithImage:(NSString *)imageName withHighLightedImageName:(NSString *)highLightedImage target:(id)target action:(SEL)selector;
+
+- (void)setRightBarItemWithImage:(NSString *)imageName target:(id)target action:(SEL)selector;
+
+- (void)setRightBarItemWithImage:(NSString *)imageName withHighLightedImageName:(NSString *)highLightedImage target:(id)target action:(SEL)selector;
+
+- (void)setBarItemWithImage:(NSString *)normalImage withHighLightedImageName:(NSString *)highLightedImage target:(id)target action:(SEL)selector itemType:(BarItemType)type;
 
 @end

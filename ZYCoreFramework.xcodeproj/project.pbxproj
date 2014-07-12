@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3E7817196EDF0600AAC15B /* ZYConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3E7816196EDF0600AAC15B /* ZYConfig.m */; };
 		BD55670A19645A780070507F /* UIView+ZYCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BD55670919645A780070507F /* UIView+ZYCore.m */; };
+		BD898F5E19712F0C00971044 /* UILabel+ZYCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */; };
 		BDB677DB1964554800507F62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677DA1964554800507F62 /* main.m */; };
 		BDB677DE1964554800507F62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677DD1964554800507F62 /* AppDelegate.m */; };
 		BDB677E11964554800507F62 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB677E01964554800507F62 /* ViewController.m */; };
@@ -29,8 +31,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD3E7814196EDE6C00AAC15B /* ZYCoreDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCoreDefine.h; sourceTree = "<group>"; };
+		BD3E7815196EDF0600AAC15B /* ZYConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYConfig.h; sourceTree = "<group>"; };
+		BD3E7816196EDF0600AAC15B /* ZYConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYConfig.m; sourceTree = "<group>"; };
 		BD55670819645A780070507F /* UIView+ZYCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYCore.h"; sourceTree = "<group>"; };
 		BD55670919645A780070507F /* UIView+ZYCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYCore.m"; sourceTree = "<group>"; };
+		BD898F5C19712F0C00971044 /* UILabel+ZYCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZYCore.h"; sourceTree = "<group>"; };
+		BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZYCore.m"; sourceTree = "<group>"; };
 		BDB677D51964554800507F62 /* ZYCoreFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYCoreFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB677D91964554800507F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB677DA1964554800507F62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,7 +54,6 @@
 		BDB677FD196455C900507F62 /* ZYCoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCoreViewController.m; sourceTree = "<group>"; };
 		BDB677FF196455E600507F62 /* ZYCoreNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCoreNavigationController.h; sourceTree = "<group>"; };
 		BDB67800196455E600507F62 /* ZYCoreNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCoreNavigationController.m; sourceTree = "<group>"; };
-		BDB678021964560F00507F62 /* ZYCoreConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCoreConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +140,13 @@
 				BDB677FD196455C900507F62 /* ZYCoreViewController.m */,
 				BDB677FF196455E600507F62 /* ZYCoreNavigationController.h */,
 				BDB67800196455E600507F62 /* ZYCoreNavigationController.m */,
-				BDB678021964560F00507F62 /* ZYCoreConfig.h */,
 				BD55670819645A780070507F /* UIView+ZYCore.h */,
 				BD55670919645A780070507F /* UIView+ZYCore.m */,
+				BD3E7814196EDE6C00AAC15B /* ZYCoreDefine.h */,
+				BD3E7815196EDF0600AAC15B /* ZYConfig.h */,
+				BD3E7816196EDF0600AAC15B /* ZYConfig.m */,
+				BD898F5C19712F0C00971044 /* UILabel+ZYCore.h */,
+				BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -240,8 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD898F5E19712F0C00971044 /* UILabel+ZYCore.m in Sources */,
 				BDB677FE196455C900507F62 /* ZYCoreViewController.m in Sources */,
 				BDB677E11964554800507F62 /* ViewController.m in Sources */,
+				BD3E7817196EDF0600AAC15B /* ZYConfig.m in Sources */,
 				BD55670A19645A780070507F /* UIView+ZYCore.m in Sources */,
 				BDB67801196455E600507F62 /* ZYCoreNavigationController.m in Sources */,
 				BDB677DE1964554800507F62 /* AppDelegate.m in Sources */,
@@ -360,7 +372,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = ZYCoreFramework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -371,7 +385,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = ZYCoreFramework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

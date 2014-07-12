@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZYCoreViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : ZYCoreViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 

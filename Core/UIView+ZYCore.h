@@ -10,8 +10,6 @@
 
 @interface UIView (ZYCore)
 
-@interface UIView (Position)
-
 /**
  * Shortcut for frame.origin.x.
  *
