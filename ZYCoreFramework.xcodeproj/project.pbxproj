@@ -39,8 +39,8 @@
 		BD55670919645A780070507F /* UIView+ZYCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYCore.m"; sourceTree = "<group>"; };
 		BD898F5C19712F0C00971044 /* UILabel+ZYCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZYCore.h"; sourceTree = "<group>"; };
 		BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZYCore.m"; sourceTree = "<group>"; };
-		BD898F5F19719A4A00971044 /* ZYCoreWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYCoreWebViewController.h; path = Core/ZYCoreWebViewController.h; sourceTree = "<group>"; };
-		BD898F6019719A4A00971044 /* ZYCoreWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYCoreWebViewController.m; path = Core/ZYCoreWebViewController.m; sourceTree = "<group>"; };
+		BD898F5F19719A4A00971044 /* ZYCoreWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCoreWebViewController.h; sourceTree = "<group>"; };
+		BD898F6019719A4A00971044 /* ZYCoreWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCoreWebViewController.m; sourceTree = "<group>"; };
 		BDB677D51964554800507F62 /* ZYCoreFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYCoreFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB677D91964554800507F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB677DA1964554800507F62 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,8 +80,6 @@
 		BDB677CC1964554800507F62 = {
 			isa = PBXGroup;
 			children = (
-				BD898F5F19719A4A00971044 /* ZYCoreWebViewController.h */,
-				BD898F6019719A4A00971044 /* ZYCoreWebViewController.m */,
 				BDB677FB1964559000507F62 /* Core */,
 				BDB677D71964554800507F62 /* ZYCoreFramework */,
 				BDB677EE1964554800507F62 /* ZYCoreFrameworkTests */,
@@ -141,6 +139,8 @@
 		BDB677FB1964559000507F62 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BD898F5F19719A4A00971044 /* ZYCoreWebViewController.h */,
+				BD898F6019719A4A00971044 /* ZYCoreWebViewController.m */,
 				BDB677FC196455C900507F62 /* ZYCoreViewController.h */,
 				BDB677FD196455C900507F62 /* ZYCoreViewController.m */,
 				BDB677FF196455E600507F62 /* ZYCoreNavigationController.h */,
