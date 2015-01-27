@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD23F21A1A77D724008FB060 /* ZYBlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBlockDefine.h; sourceTree = "<group>"; };
 		BD3E7814196EDE6C00AAC15B /* ZYCoreDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCoreDefine.h; sourceTree = "<group>"; };
 		BD3E7815196EDF0600AAC15B /* ZYConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYConfig.h; sourceTree = "<group>"; };
 		BD3E7816196EDF0600AAC15B /* ZYConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYConfig.m; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 				BD3E7816196EDF0600AAC15B /* ZYConfig.m */,
 				BD898F5C19712F0C00971044 /* UILabel+ZYCore.h */,
 				BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */,
+				BD23F21A1A77D724008FB060 /* ZYBlockDefine.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
