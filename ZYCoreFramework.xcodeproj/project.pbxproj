@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0914496A1A79FAB900FAFBC0 /* UIViewController+navigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 091449691A79FAB900FAFBC0 /* UIViewController+navigationBarItem.m */; };
 		BD3E7817196EDF0600AAC15B /* ZYConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3E7816196EDF0600AAC15B /* ZYConfig.m */; };
 		BD55670A19645A780070507F /* UIView+ZYCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BD55670919645A780070507F /* UIView+ZYCore.m */; };
 		BD898F5E19712F0C00971044 /* UILabel+ZYCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091449681A79FAB900FAFBC0 /* UIViewController+navigationBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+navigationBarItem.h"; sourceTree = "<group>"; };
+		091449691A79FAB900FAFBC0 /* UIViewController+navigationBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+navigationBarItem.m"; sourceTree = "<group>"; };
 		BD23F21A1A77D724008FB060 /* ZYBlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYBlockDefine.h; sourceTree = "<group>"; };
 		BD3E7814196EDE6C00AAC15B /* ZYCoreDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCoreDefine.h; sourceTree = "<group>"; };
 		BD3E7815196EDF0600AAC15B /* ZYConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYConfig.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				BD898F5C19712F0C00971044 /* UILabel+ZYCore.h */,
 				BD898F5D19712F0C00971044 /* UILabel+ZYCore.m */,
 				BD23F21A1A77D724008FB060 /* ZYBlockDefine.h */,
+				091449681A79FAB900FAFBC0 /* UIViewController+navigationBarItem.h */,
+				091449691A79FAB900FAFBC0 /* UIViewController+navigationBarItem.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				BD898F5E19712F0C00971044 /* UILabel+ZYCore.m in Sources */,
 				BDB677FE196455C900507F62 /* ZYCoreViewController.m in Sources */,
 				BDB677E11964554800507F62 /* ViewController.m in Sources */,
+				0914496A1A79FAB900FAFBC0 /* UIViewController+navigationBarItem.m in Sources */,
 				BD3E7817196EDF0600AAC15B /* ZYConfig.m in Sources */,
 				BD898F6119719A4A00971044 /* ZYCoreWebViewController.m in Sources */,
 				BD55670A19645A780070507F /* UIView+ZYCore.m in Sources */,
