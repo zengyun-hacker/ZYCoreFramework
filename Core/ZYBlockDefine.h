@@ -15,5 +15,6 @@ typedef void(^ZYImageBlock)(UIImageView *imageView);
 typedef void(^ZYDictionaryBlock)(NSDictionary *dic);
 typedef void(^ZYBoolBlock)(BOOL boo);
 typedef void(^ZYStringBlock)(NSString *string);
+typedef void(^ZYErrorBlock)(NSError *error);
 
 #endif
