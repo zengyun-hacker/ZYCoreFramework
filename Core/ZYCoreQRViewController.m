@@ -55,9 +55,9 @@ static const char *kScanQRCodeQueueName = "ZYCoreScanQRCodeQueue";
 	dispatchQueue = dispatch_queue_create(kScanQRCodeQueueName, NULL);
 	[captureMetadataOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
 	// 设置元数据类型 AVMetadataObjectTypeQRCode
-	[captureMetadataOutput setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN8Code]];
+	[captureMetadataOutput setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]];
 	
-	// 创建输出对象
+	// 创建输出对象j
 	_videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
 	[_videoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
 	[_videoPreviewLayer setFrame:self.view.layer.bounds];
@@ -79,13 +79,10 @@ static const char *kScanQRCodeQueueName = "ZYCoreScanQRCodeQueue";
 	if (metadataObjects != nil && [metadataObjects count] > 0) {
 		AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
 		NSString *result;
-		if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-			result = metadataObj.stringValue;
-		}
-		else {
-			DLog(@"不是二维码");
-		}
-		[self performSelectorOnMainThread:@selector(reportScanResult:) withObject:result waitUntilDone:NO];
+        result = metadataObj.stringValue;
+        if (result) {
+            [self performSelectorOnMainThread:@selector(reportScanResult:) withObject:result waitUntilDone:NO];
+        }
 	}
 }
 
