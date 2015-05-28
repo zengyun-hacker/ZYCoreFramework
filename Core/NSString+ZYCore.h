@@ -14,4 +14,6 @@
 
 - (NSString *)trim;
 
+- (NSNumber *)toNumber;
+
 @end

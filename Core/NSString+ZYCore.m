@@ -11,15 +11,20 @@
 @implementation NSString (ZYCore)
 
 - (BOOL)isEmpty {
-    if (!self || self.length == 0) {
-        return YES;
-    }
-    return NO;
+	if (!self || self.length == 0) {
+		return YES;
+	}
+	return NO;
 }
 
 - (NSString *)trim {
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (NSNumber *)toNumber {
+	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+	numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+	return [numberFormatter numberFromString:self];
+}
 
 @end

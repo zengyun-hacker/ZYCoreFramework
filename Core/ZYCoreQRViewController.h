@@ -18,4 +18,8 @@
 
 - (void)scanFinish:(NSString *)result;
 
+- (BOOL)startReading;
+
+- (void)stopReading;
+
 @end
