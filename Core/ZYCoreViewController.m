@@ -39,6 +39,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     [self setLeftBackItem];
 }
 
