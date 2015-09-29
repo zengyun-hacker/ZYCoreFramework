@@ -21,7 +21,7 @@
             [self setLeftBarItemWithImage:CONFIG_IMAGE_NAME_LEFT_BACK_ITEM target:self action:@selector(back)];
         }
         else {
-            [self setLeftBarItemWithString:@"Back" target:self action:@selector(back)];
+            [self setLeftBarItemWithString:@"返回" target:self action:@selector(back)];
         }
     }
 }
@@ -74,9 +74,9 @@
 - (void)setBarItemWithString:(NSString *)itemName target:(id)target action:(SEL)selector itemType:(BarItemType)type {
     UIButton *itemButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [itemButton setTitle:itemName forState:UIControlStateNormal];
-    [itemButton.titleLabel sizeToFit];
     itemButton.titleLabel.font = [ZYConfig FONT_BAR_ITEM_TEXT];
     itemButton.titleLabel.textColor = [ZYConfig COLOR_BAR_ITEM_TEXT];
+    [itemButton.titleLabel sizeToFit];
     itemButton.size = itemButton.titleLabel.size;
     if ([target respondsToSelector:selector]) {
         [itemButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
