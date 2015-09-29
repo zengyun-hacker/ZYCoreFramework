@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "ZYCoreViewController.h"
 
 /**
  *  二维码扫码界面
  */
-@interface ZYCoreQRViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface ZYCoreQRViewController : ZYCoreViewController <AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic) BOOL shouldRead;
+@property (nonatomic) AVCaptureMetadataOutput *captureMetadataOutput;
 
 - (void)scanFinish:(NSString *)result;
+
+- (void)setObjectTypes:(NSArray *)types;
+
+- (void)setOutputInterest:(CGRect)rect;
 
 - (BOOL)startReading;
 

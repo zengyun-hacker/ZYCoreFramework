@@ -20,8 +20,25 @@ static const char *kScanQRCodeQueueName = "ZYCoreScanQRCodeQueue";
 
 @implementation ZYCoreQRViewController
 
+- (void)setObjectTypes:(NSArray *)types {
+    if (self.captureMetadataOutput) {
+        [self.captureMetadataOutput setMetadataObjectTypes:types];
+    }
+}
+
+- (void)setOutputInterest:(CGRect)rect {
+    if (self.captureMetadataOutput) {
+        self.captureMetadataOutput.rectOfInterest = rect;
+    }
+}
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [self addReadingView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 	[self startReading];
 }
 
@@ -30,38 +47,37 @@ static const char *kScanQRCodeQueueName = "ZYCoreScanQRCodeQueue";
 	// Dispose of any resources that can be recreated.
 }
 
+- (void)addReadingView {
+    // 获取 AVCaptureDevice 实例
+    self.shouldRead = YES;
+    NSError *error;
+    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    // 初始化输入流
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
+    // 创建会话
+    _captureSession = [[AVCaptureSession alloc] init];
+    // 添加输入流
+    [_captureSession addInput:input];
+    // 初始化输出流
+    self.captureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
+    // 添加输出流
+    [_captureSession addOutput:self.captureMetadataOutput];
+    
+    // 创建dispatch queue.
+    dispatch_queue_t dispatchQueue;
+    dispatchQueue = dispatch_queue_create(kScanQRCodeQueueName, NULL);
+    [self.captureMetadataOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
+    // 设置元数据类型 AVMetadataObjectTypeQRCode
+    [self.captureMetadataOutput setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]];
+    
+    // 创建输出对象
+    _videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
+    [_videoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    [_videoPreviewLayer setFrame:self.view.layer.bounds];
+    [self.view.layer addSublayer:_videoPreviewLayer];
+}
+
 - (BOOL)startReading {
-	// 获取 AVCaptureDevice 实例
-	self.shouldRead = YES;
-	NSError *error;
-	AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-	// 初始化输入流
-	AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
-	if (!input) {
-		DLog(@"%@", [error localizedDescription]);
-		return NO;
-	}
-	// 创建会话
-	_captureSession = [[AVCaptureSession alloc] init];
-	// 添加输入流
-	[_captureSession addInput:input];
-	// 初始化输出流
-	AVCaptureMetadataOutput *captureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
-	// 添加输出流
-	[_captureSession addOutput:captureMetadataOutput];
-	
-	// 创建dispatch queue.
-	dispatch_queue_t dispatchQueue;
-	dispatchQueue = dispatch_queue_create(kScanQRCodeQueueName, NULL);
-	[captureMetadataOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
-	// 设置元数据类型 AVMetadataObjectTypeQRCode
-	[captureMetadataOutput setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]];
-	
-	// 创建输出对象j
-	_videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
-	[_videoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-	[_videoPreviewLayer setFrame:self.view.layer.bounds];
-	[self.view.layer addSublayer:_videoPreviewLayer];
 	// 开始会话
 	[_captureSession startRunning];
 	
@@ -71,7 +87,6 @@ static const char *kScanQRCodeQueueName = "ZYCoreScanQRCodeQueue";
 - (void)stopReading {
 	// 停止会话
 	[_captureSession stopRunning];
-	_captureSession = nil;
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects
