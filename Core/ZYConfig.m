@@ -18,7 +18,7 @@
 
 #pragma mark - Font
 + (UIFont *)FONT_BAR_ITEM_TEXT {
-    return [UIFont systemFontOfSize:14.];
+    return [UIFont systemFontOfSize:18.];
 }
 
 @end
