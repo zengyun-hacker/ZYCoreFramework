@@ -12,4 +12,8 @@
 
 @property (nonatomic) id data;
 
+- (void)updateUI;
+
+- (void)setupUI;
+
 @end

@@ -15,12 +15,17 @@
 }
 
 - (instancetype)initWithCellClass:(Class)cellClass withCellHeight:(CGFloat)cellHeight withDidSelectedCallBack:(ZYTableViewCallBack)cellDidSelectd {
+    return [self initWithCellClass:cellClass withCellHeight:cellHeight withCellData:nil withDidSelectedCallBack:cellDidSelectd];
+}
+
+- (instancetype)initWithCellClass:(Class)cellClass withCellHeight:(CGFloat)cellHeight withCellData:(id)data withDidSelectedCallBack:(ZYTableViewCallBack)cellDidSelectd {
     self = [super init];
     if (self) {
         self.cellClass = cellClass;
         self.cellHeight = cellHeight;
         self.cellDidSelected = cellDidSelectd;
         self.reuseIdentifier = NSStringFromClass(cellClass);
+        self.cellData = data;
     }
     return self;
 }

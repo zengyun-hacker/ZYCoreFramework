@@ -17,6 +17,17 @@
 
 @implementation ZYCoreTableViewController
 
+- (void)setTableViewData:(NSArray *)tableViewData {
+    _tableViewData = tableViewData;
+    [tableViewData enumerateObjectsUsingBlock:^(NSArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj enumerateObjectsUsingBlock:^(ZYCoreCellInfo *  _Nonnull cellInfo, NSUInteger idx, BOOL * _Nonnull stop) {
+            //注册cell
+            [self registerCell:cellInfo.cellClass withReuseIdentifier:cellInfo.reuseIdentifier];
+        }];
+    }];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,6 +48,15 @@
         return self.tableViewData[indexPath.section][indexPath.row];
     }
     return [ZYCoreCellInfo new];
+}
+
+- (void)registerCell:(Class)class withReuseIdentifier:(NSString *)reuseIdentifier {
+    if ([[NSBundle mainBundle] pathForResource:NSStringFromClass(class) ofType:@"nib"]) {
+        [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(class) bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    }
+    else {
+        [self.tableView registerClass:class forCellReuseIdentifier:reuseIdentifier];
+    }
 }
 
 #pragma mark - Table view data source
@@ -70,7 +90,7 @@
     ZYCoreCellInfo *info = [self cellInfoWithIndexPath:indexPath];
     ZYCoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:info.reuseIdentifier forIndexPath:indexPath];
     if (info.cellDidReuse) {
-        info.cellDidReuse(tableView,[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
+        info.cellDidReuse(tableView,(ZYCoreTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
     }
     cell.data = info.cellData;
 
@@ -80,14 +100,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZYCoreCellInfo *info = [self cellInfoWithIndexPath:indexPath];
     if (info.cellDidSelected) {
-        info.cellDidSelected(tableView,[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
+        info.cellDidSelected(tableView,(ZYCoreTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
     }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     ZYCoreCellInfo *info = [self cellInfoWithIndexPath:indexPath];
     if (info.cellWillDisplay) {
-        info.cellWillDisplay(tableView,[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
+        info.cellWillDisplay(tableView,(ZYCoreTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
     }
 }
 
