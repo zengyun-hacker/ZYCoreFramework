@@ -92,6 +92,7 @@
     if (info.cellDidReuse) {
         info.cellDidReuse(tableView,(ZYCoreTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
     }
+    cell.accessoryType = info.accessoryType;
     cell.data = info.cellData;
 
     return cell;

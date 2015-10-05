@@ -19,6 +19,7 @@ typedef void(^ZYTableViewCallBack)(UITableView *tableView, ZYCoreTableViewCell *
 @property (nonatomic) CGFloat cellHeight;
 @property (nonatomic) Class cellClass;
 @property (nonatomic) NSString *reuseIdentifier;
+@property (nonatomic) UITableViewCellAccessoryType accessoryType;
 
 @property (nonatomic, copy) ZYTableViewCallBack cellDidSelected;
 @property (nonatomic, copy) ZYTableViewCallBack cellDidReuse;
@@ -29,4 +30,5 @@ typedef void(^ZYTableViewCallBack)(UITableView *tableView, ZYCoreTableViewCell *
 - (instancetype)initWithCellClass:(Class)cellClass withCellHeight:(CGFloat)cellHeight withDidSelectedCallBack:(ZYTableViewCallBack)cellDidSelectd;
 
 - (instancetype)initWithCellClass:(Class)cellClass withCellHeight:(CGFloat)cellHeight withCellData:(id)data withDidSelectedCallBack:(ZYTableViewCallBack)cellDidSelectd;
+
 @end
