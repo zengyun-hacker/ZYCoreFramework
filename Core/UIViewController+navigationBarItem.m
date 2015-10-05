@@ -14,7 +14,6 @@
 @implementation UIViewController (navigationBarItem)
 
 - (void)setLeftBackItem {
-    DLog(@"navigation controller's view controller count: %lu",(unsigned long)self.navigationController.viewControllers.count);
     if (self.navigationController.viewControllers.count > 1) {
         //如果可以返回的话，愉快地设置好返回按钮
         if (CONFIG_IMAGE_NAME_LEFT_BACK_ITEM && CONFIG_IMAGE_NAME_LEFT_BACK_ITEM.length > 0) {
