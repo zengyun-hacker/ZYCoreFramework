@@ -22,7 +22,9 @@
     [tableViewData enumerateObjectsUsingBlock:^(NSArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj enumerateObjectsUsingBlock:^(ZYCoreCellInfo *  _Nonnull cellInfo, NSUInteger idx, BOOL * _Nonnull stop) {
             //注册cell
-            [self registerCell:cellInfo.cellClass withReuseIdentifier:cellInfo.reuseIdentifier];
+            if (!cellInfo.doNotRegisterClass) {
+                [self registerCell:cellInfo.cellClass withReuseIdentifier:cellInfo.reuseIdentifier];
+            }
         }];
     }];
     [self.tableView reloadData];

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ZYBlockDefine.h"
 
 @class ZYCoreTableViewCell;
+@class UITableView;
 
 typedef void(^ZYTableViewCallBack)(UITableView *tableView, ZYCoreTableViewCell *cell, NSIndexPath *indexPath, id cellData);
 
@@ -20,6 +22,7 @@ typedef void(^ZYTableViewCallBack)(UITableView *tableView, ZYCoreTableViewCell *
 @property (nonatomic) Class cellClass;
 @property (nonatomic) NSString *reuseIdentifier;
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
+@property (nonatomic) BOOL doNotRegisterClass;
 
 @property (nonatomic, copy) ZYTableViewCallBack cellDidSelected;
 @property (nonatomic, copy) ZYTableViewCallBack cellDidReuse;
