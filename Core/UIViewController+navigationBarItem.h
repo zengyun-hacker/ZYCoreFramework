@@ -33,6 +33,8 @@ typedef enum {
 
 - (void)setBarItemWithString:(NSString *)itemName target:(id)target action:(SEL)selector itemType:(BarItemType)type;
 
+- (void)setTitleWithImage:(NSString *)imageName;
+
 - (void)back;
 
 @end

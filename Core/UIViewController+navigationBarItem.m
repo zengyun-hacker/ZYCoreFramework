@@ -89,6 +89,11 @@
     }
 }
 
+- (void)setTitleWithImage:(NSString *)imageName {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    self.navigationItem.titleView = imageView;
+}
+
 #pragma mark - Action
 - (void)back {
     [self.navigationController popViewControllerAnimated:CONFIG_ANIMATION_POP];
