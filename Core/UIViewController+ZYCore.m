@@ -23,6 +23,9 @@
 }
 
 + (UIViewController *)viewControllerWithIdentifer:(NSString *)identifier withStoryboardName:(NSString *)storyboardName {
+    if (!storyboardName) {
+        storyboardName = @"Main";
+    }
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:identifier];
     return viewController;
