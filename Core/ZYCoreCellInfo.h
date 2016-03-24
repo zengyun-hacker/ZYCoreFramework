@@ -27,6 +27,7 @@ typedef void(^ZYTableViewCallBack)(UITableView *tableView, ZYCoreTableViewCell *
 @property (nonatomic, copy) ZYTableViewCallBack cellDidSelected;
 @property (nonatomic, copy) ZYTableViewCallBack cellDidReuse;
 @property (nonatomic, copy) ZYTableViewCallBack cellWillDisplay;
+@property (nonatomic, copy) ZYTableViewCallBack configCell;
 
 - (instancetype)initWithCellClass:(Class)cellClass;
 

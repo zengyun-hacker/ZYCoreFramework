@@ -85,6 +85,9 @@
     ZYCoreCellInfo *info = [self cellInfoWithIndexPath:indexPath];
     return [tableView fd_heightForCellWithIdentifier:info.reuseIdentifier configuration:^(ZYCoreTableViewCell * cell) {
         cell.data = info.cellData;
+        if (info.configCell) {
+            info.configCell(tableView, cell, indexPath, info.cellData);
+        }
     }];
 }
 
@@ -96,6 +99,9 @@
     }
     cell.accessoryType = info.accessoryType;
     cell.data = info.cellData;
+    if (info.configCell) {
+        info.configCell(tableView, cell, indexPath, info.cellData);
+    }
 
     return cell;
 }
@@ -104,6 +110,10 @@
     ZYCoreCellInfo *info = [self cellInfoWithIndexPath:indexPath];
     if (info.cellDidSelected) {
         info.cellDidSelected(tableView,(ZYCoreTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
+    }
+    else {
+        UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 }
 
