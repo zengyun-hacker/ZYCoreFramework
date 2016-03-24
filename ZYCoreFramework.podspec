@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
 # Pod Dependencies
-  s.dependency 'UITableView+FDTemplateLayoutCell','1.3'
+  s.dependency 'UITableView+FDTemplateLayoutCell'
 
 end
