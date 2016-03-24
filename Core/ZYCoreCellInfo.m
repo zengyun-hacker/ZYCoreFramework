@@ -10,6 +10,13 @@
 
 @implementation ZYCoreCellInfo
 
+- (NSString *)reuseIdentifier {
+    if (!_reuseIdentifier) {
+        _reuseIdentifier = NSStringFromClass(self.cellClass);
+    }
+    return _reuseIdentifier;
+}
+
 - (instancetype)initWithCellClass:(Class)cellClass {
     return [self initWithCellClass:cellClass withCellHeight:0 withDidSelectedCallBack:nil];
 }
