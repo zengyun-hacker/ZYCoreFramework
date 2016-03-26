@@ -33,7 +33,6 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
     NSString *mediaType = (NSString *) [info objectForKey:UIImagePickerControllerMediaType];
     UIImage *originalImage, *editedImage, *imageToSave;
-//    if (CFStringCompare((__bridge CFStringRef)mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
     editedImage = (UIImage *) info[UIImagePickerControllerEditedImage];
     originalImage = (UIImage *) info[UIImagePickerControllerOriginalImage];
     if (editedImage) {
@@ -47,7 +46,6 @@
     if (self.delegate) {
         [self.delegate didFinishTakingPhoto:imageToSave];
     }
-//    }
 
 }
 

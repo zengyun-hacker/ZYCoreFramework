@@ -32,7 +32,6 @@
     NSString *mediaType = (NSString *) info[UIImagePickerControllerMediaType];
     UIImage *originalImage, *editedImage, *imageToUse;
 
-//    if (CFStringCompare((__bridge CFStringRef)mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
     originalImage = (UIImage *) info[UIImagePickerControllerOriginalImage];
     editedImage = (UIImage *) info[UIImagePickerControllerEditedImage];
 
@@ -47,8 +46,6 @@
     if (self.delegate) {
         [self.delegate didFinishPickingPhoto:imageToUse];
     }
-//    }
-
 }
 
 
