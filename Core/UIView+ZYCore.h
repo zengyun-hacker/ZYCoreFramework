@@ -66,4 +66,5 @@
 
 @property (nonatomic) CGFloat centerY;
 
+- (void)removeAllSubviews;
 @end
