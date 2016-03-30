@@ -111,10 +111,6 @@
     if (info.cellDidSelected) {
         info.cellDidSelected(tableView,(ZYCoreTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath],indexPath,info);
     }
-    else {
-        UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
