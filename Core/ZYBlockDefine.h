@@ -13,6 +13,7 @@ typedef void(^ZYBlock)();
 typedef void(^ZYObjectBlock)(id param);
 typedef void(^ZYDictionaryBlock)(NSDictionary *dic);
 typedef void(^ZYBoolBlock)(BOOL boo);
+typedef void(^ZYIntegerBlock)(NSInteger integer);
 typedef void(^ZYStringBlock)(NSString *string);
 typedef void(^ZYErrorBlock)(NSError *error);
 
