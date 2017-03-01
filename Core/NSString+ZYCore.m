@@ -27,4 +27,9 @@
 	return [numberFormatter numberFromString:self];
 }
 
+- (BOOL)validateWithRegularString:(NSString *)regularString {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regularString];
+    return [predicate evaluateWithObject:self];
+}
+
 @end

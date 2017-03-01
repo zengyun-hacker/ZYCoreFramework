@@ -16,4 +16,6 @@
 
 - (NSNumber *)toNumber;
 
+- (BOOL)validateWithRegularString:(NSString *)regularString;
+
 @end
