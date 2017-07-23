@@ -14,5 +14,6 @@ Pod::Spec.new do |s|
   
 # Pod Dependencies
   s.dependency 'UITableView+FDTemplateLayoutCell'
+  s.dependency 'Masonry'
 
 end
