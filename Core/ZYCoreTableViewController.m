@@ -9,7 +9,7 @@
 #import "ZYCoreTableViewController.h"
 #import "ZYCoreCellInfo.h"
 #import "ZYCoreTableViewCell.h"
-#import <UITableView+FDTemplateLayoutCell.h>
+#import <UITableView_FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 
 @interface ZYCoreTableViewController ()
 
